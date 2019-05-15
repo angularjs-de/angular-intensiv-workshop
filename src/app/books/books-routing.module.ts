@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BooksComponent } from './books/books.component';
+import { ConfirmCandeactivateGuard } from './confirm-candeactivate.guard';
 
 const routes: Routes = [{
   path: '',
@@ -12,7 +13,8 @@ const routes: Routes = [{
     component: BookListComponent
   }, {
     path: ':isbn',
-    component: BookDetailComponent
+    component: BookDetailComponent,
+    canDeactivate: [ConfirmCandeactivateGuard]
   }]
 }];
 
