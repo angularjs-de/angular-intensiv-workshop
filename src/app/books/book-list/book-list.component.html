@@ -1,5 +1,5 @@
 <table>
-  <tr *ngFor="let book of books">
+  <tr *ngFor="let book of books" class="rowBorder">
     <td>{{ book.title }}</td>
     <td>{{ book.isbn }}</td>
     <td><a [routerLink]="[book.isbn]">Details</a></td>
