@@ -1,0 +1,16 @@
+<form *ngIf="book" #form="ngForm">
+  <table>
+    <tbody>
+      <tr>
+        <td>Title</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="book.title"
+            name="title"
+            #title="ngModel">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
