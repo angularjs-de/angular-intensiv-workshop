@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+  <table>
+    <tbody>
+      <tr>
+        <td>Title</td>
+        <td>
+          <input type="text" formControlName="title">
+          <div [hidden]="!form.get('title').hasError('required') || form.get('title').pristine">Title is required</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Abstract</td>
+        <td>
+          <input type="text" formControlName="abstract">
+          <div [hidden]="!form.get('abstract').hasError('required') || form.get('abstract').pristine">Abstract is required</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Author</td>
+        <td>
+          <input type="text" formControlName="author">
+          <div [hidden]="!form.get('author').hasError('required') || form.get('author').pristine">Author is required</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button type="submit" [disabled]="!form.valid">Create</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>

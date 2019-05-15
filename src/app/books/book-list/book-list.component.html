@@ -4,4 +4,9 @@
     <td>{{ book.isbn }}</td>
     <td><a [routerLink]="[book.isbn]">Details</a></td>
   </tr>
+  <tr>
+    <td colspan="2">
+      <a [routerLink]="['new']">Add new book</a>
+    </td>
+  </tr>
 </table>
