@@ -12,7 +12,7 @@ export class BookListComponent implements OnInit {
   books: Book[];
 
   constructor(private bookData: BookDataService) {
-    this.books = this.bookData.getBooks();
+    this.bookData.getBooks().subscribe(books => this.books = books);
   }
 
   ngOnInit() {

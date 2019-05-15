@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Book } from './book';
 
 @Injectable()
@@ -6,8 +7,8 @@ export class BookDataService {
 
   constructor() { }
 
-  getBooks(): Book[] {
-    return [
+  getBooks(): Observable<Book[]> {
+    return of([
       {
         title: 'Design Patterns',
         subtitle: 'Elements of Reusable Object-Oriented Software',
@@ -44,6 +45,6 @@ export class BookDataService {
           url: 'https://www.nostarch.com/'
         }
       }
-    ];
+    ]);
   }
 }
