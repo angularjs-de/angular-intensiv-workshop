@@ -28,4 +28,7 @@ export class BookEditComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  save(values: Partial<Book>) {
+    console.log(values);
+  }
 }
