@@ -29,6 +29,7 @@ export class BookEditComponent implements OnInit, OnDestroy {
   }
 
   save(values: Partial<Book>) {
-    console.log(values);
+    this.bookData.updateBook(this.book.isbn, values)
+      .subscribe(updatedBook => this.book = updatedBook);
   }
 }

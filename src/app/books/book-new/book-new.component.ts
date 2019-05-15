@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
+import { BookDataService } from '../book-data.service';
 
 @Component({
   selector: 'book-new',
@@ -10,7 +11,7 @@ export class BookNewComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private bookData: BookDataService) {
     this.form = this.fb.group({
       title: ['', [Validators.required]],
       abstract: ['', [Validators.required]],
@@ -22,7 +23,7 @@ export class BookNewComponent implements OnInit {
   }
 
   save() {
-    console.log(this.form.value);
+    this.bookData.createBook(this.form.value).subscribe(console.log);
   }
 
 }
