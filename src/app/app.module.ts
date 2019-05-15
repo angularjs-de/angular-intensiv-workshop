@@ -8,6 +8,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { MouseCursorComponent } from './mouse-cursor/mouse-cursor.component';
 import { TitleBoxComponent } from './title-box/title-box.component';
+import { ShoutPipe } from './shared/shout.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TitleBoxComponent } from './title-box/title-box.component';
     NavigationComponent,
     InfoBoxComponent,
     MouseCursorComponent,
-    TitleBoxComponent
+    TitleBoxComponent,
+    ShoutPipe
   ],
   imports: [
     BrowserModule,
