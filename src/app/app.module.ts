@@ -9,6 +9,7 @@ import { InfoBoxComponent } from './info-box/info-box.component';
 import { MouseCursorComponent } from './mouse-cursor/mouse-cursor.component';
 import { TitleBoxComponent } from './title-box/title-box.component';
 import { ShoutPipe } from './shared/shout.pipe';
+import { TooltipDirective } from './shared/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ShoutPipe } from './shared/shout.pipe';
     InfoBoxComponent,
     MouseCursorComponent,
     TitleBoxComponent,
-    ShoutPipe
+    ShoutPipe,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,
