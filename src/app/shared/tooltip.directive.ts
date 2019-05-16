@@ -1,4 +1,4 @@
-import { Directive, Input, HostListener } from '@angular/core';
+import { Directive, Input, HostListener, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[tooltip]'
@@ -6,17 +6,21 @@ import { Directive, Input, HostListener } from '@angular/core';
 export class TooltipDirective {
 
   @Input()
-  tooltip: string;
+  set tooltip(newVal) {
+    this.tooltipElement.innerText = newVal;
+  }
 
-  constructor() { }
+  private tooltipElement = document.createElement('div');
+
+  constructor(private elementRef: ElementRef) { }
 
   @HostListener('mouseenter')
   onMouseEnter() {
-    console.log('MouseEnter', this.tooltip);
+    this.elementRef.nativeElement.appendChild(this.tooltipElement);
   }
 
   @HostListener('mouseleave')
   onMouseLeave() {
-    console.log('MouseLeave', this.tooltip);
+    this.elementRef.nativeElement.removeChild(this.tooltipElement);
   }
 }
